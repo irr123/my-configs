@@ -1,0 +1,12 @@
+[submodule "vimfiles/pack/plugins/start/commentary"]
+	path = vimfiles/pack/plugins/start/commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vimfiles/pack/plugins/start/editorconfig"]
+	path = vimfiles/pack/plugins/start/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vimfiles/pack/plugins/start/easygit"]
+	path = vimfiles/pack/plugins/start/easygit
+	url = https://github.com/neoclide/vim-easygit.git
+[submodule "vimfiles/pack/plugins/start/lsc"]
+	path = vimfiles/pack/plugins/start/lsc
+	url = https://github.com/natebosch/vim-lsc.git

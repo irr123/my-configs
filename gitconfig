@@ -1,0 +1,51 @@
+[alias]
+	df = difftool
+	st = status -s
+	lg = log \
+		--abbrev=7 \
+		--date=short \
+		--decorate=short \
+		--graph \
+		--pretty=format:'[%C(auto,red)%h%Creset][%C(auto,green)%cd%Creset][%C(auto,blue)%aE%Creset]: %s'
+[core]
+	autocrlf = false
+	editor = vim --noplugin
+	excludesfile = ~/.gitignore
+	fileMode = false
+	ignorecase = false
+	longpaths = true
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[blame]
+	date = short
+	showEmail = true
+[push]
+	default = simple
+[gc]
+	auto = 256
+[diff]
+	prompt = true
+	renamelimit = 0
+	renames = copies
+	tool = vidiff
+[difftool "vidiff"]
+	cmd = vim -d $LOCAL $REMOTE
+	trustExitCode = true
+[merge]
+	tool = vimerge
+[mergetool "vimerge"]
+	cmd = vim -d $LOCAL $REMOTE $BASE $MERGED
+	trustExitCode = true
+[user]
+	email = ivan@bogomolov.su
+	name = Ivan Bogomolov
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

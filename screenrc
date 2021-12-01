@@ -1,0 +1,13 @@
+altscreen on          # fix fullscreen programs
+attrcolor b ".I"      # allow bold colors - necessary for some reason
+bindkey ^[[1;2C next  # shift right arrow, alt Ctrl+A + n
+bindkey ^[[1;2D prev  # shift left arrow,  alt Ctrl+A + p
+defscrollback 65536
+hardstatus alwayslastline "%{= .d}%-w%{+r .d}%50>[%n %t]%{-}%+w%<"
+maptimeout 5          # http://vim.wikia.com/wiki/GNU_Screen_integration
+nonblock 5
+obuflimit 1024
+shelltitle ?
+startup_message off
+term screen-256color  # makes work mac home/end keys in neovim
+vbell off
