@@ -50,6 +50,8 @@ let g:lsc_reference_highlights = v:false
 let g:lsc_server_commands = {
   \"go":              {"log_level": -1, "command": "gopls"},
   \"python":          {"log_level": -1, "command": "pyls"},
+  \"c":               {"log_level": -1, "command": "clangd --background-index"},
+  \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
   \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
   \"javascriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
   \"typescript":      {"log_level": -1, "command": "typescript-language-server --stdio"},

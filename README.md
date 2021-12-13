@@ -1,7 +1,7 @@
 # Just a place where I synchronizing my cfgs ower multiple machines
 
 Good font you may be found here https://github.com/ryanoasis/nerd-fonts/releases
- or `brew install font-jetbrains-mono`
+ or `brew install font-hack`
 
 VIM setup working with 8+ version and neovim (https://github.com/macvim-dev/homebrew-macvim)
 
@@ -39,3 +39,4 @@ My unrelated notes:
 
   rg --vimgrep --no-heading "$@"
   ```
+- mac inplace: `find . -type f -name "*.go" -exec sed -i '' 's|"node-balancer/|"go-streaming/|g' {} \;`
