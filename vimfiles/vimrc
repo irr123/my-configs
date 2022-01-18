@@ -1,28 +1,35 @@
 filetype plugin indent on
 syntax enable
 
+let g:EditorConfig_preserve_formatoptions = 1
 let g:mapleader             = "\<Space>"
 let g:netrw_banner          = 0
-let g:netrw_fastbrowse      = 0     " https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
-let g:netrw_use_errorwindow = 1     " https://github.com/vim/vim/issues/7828
+let g:netrw_fastbrowse      = 0          " https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
+let g:netrw_use_errorwindow = 1          " https://github.com/vim/vim/issues/7828
 let g:skip_defaults_vim     = 1
 
 nnoremap <Leader> <NOP>
+nnoremap <Leader><Left> :tabprevious<CR>
+nnoremap <Leader><Right> :tabnext<CR>
+nnoremap <Leader>[ :ALEFindReferences<CR>
+nnoremap <Leader>] :ALEGoToDefinition<CR>
 nnoremap <Leader>b :set nomore<Bar>:buffers<Bar>:set more<CR>:buffer<Space>
 nnoremap <Leader>e :Explore %:p:h<CR>
-nnoremap <Leader>q :bwipeout<CR>:redraw<CR>
+nnoremap <Leader>k :ALEHover<CR>
+nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
 nnoremap <Leader>t <C-o>
+nnoremap <S-Tab> :wincmd W<CR>
 nnoremap <Tab> :wincmd w<CR>
 
 if has("clipboard")
-  set clipboard^=unnamed            " On mac and Windows, use * register for copy-paste
-  if has("unnamedplus")             " When possible use + register for copy-paste
+  set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
+  if has("unnamedplus")                  " When possible use + register for copy-paste
     set clipboard^=unnamedplus
   endif
 endif
 
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
-set foldlevel=99 foldmethod=indent  " za to toggle, opens all by default
+set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
 set hidden
 set hlsearch incsearch ignorecase smartcase showmatch
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:{},фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]
@@ -30,9 +37,9 @@ set laststatus=2 noruler statusline=\%M\%f%=\%l:\%c
 set linebreak showbreak=¬
 set list listchars=tab:•·,trail:•,nbsp:¤,extends:¦,precedes:¦
 set matchtime=1
-set mouse= sidescroll=1             " horizontal scroll by symbol (default half screen)
+set mouse= sidescroll=1                  " horizontal scroll by symbol (default half screen)
 set nobackup noswapfile nowritebackup
-set noeb vb t_vb=                   " https://vim.fandom.com/wiki/Disable_beeping
+set noeb vb t_vb=                        " https://vim.fandom.com/wiki/Disable_beeping
 set notitle nowrap nomodeline
 set nowildmenu wildmode=list:longest,full
 set shortmess=aI
@@ -43,36 +50,22 @@ set undolevels=8 viminfo=""
 silent! colorscheme pencil
 silent! set completeopt=menuone,noinsert,noselect
 
-let g:EditorConfig_preserve_formatoptions = 1
-let g:easygit_enable_command = 1
-let g:lsc_popup_syntax = v:false
-let g:lsc_reference_highlights = v:false
-let g:lsc_server_commands = {
-  \"go":              {"log_level": -1, "command": "gopls"},
-  \"python":          {"log_level": -1, "command": "pyls"},
-  \"c":               {"log_level": -1, "command": "clangd --background-index"},
-  \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
-  \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"javascriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"typescript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"typescriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"php": {
-  \  "log_level": -1,
-  \  "command": "intelephense --stdio",
-  \  "message_hooks": {
-  \    "initialize": {
-  \      "initializationOptions": {"storagePath": "/tmp/intelephense"},
-  \     },
-  \  },
-  \  "workspace_config": {
-  \    "intelephense.files.exclude": ["**/node_modules/**"]
-  \  },
-  \},
-\}
-let g:lsc_auto_map = {
-  \"defaults": v:true,
-  \"ShowHover": "<leader>k",
-  \"GoToDefinition": "<leader>]",
-  \"FindReferences": "<leader>[",
-  \"FindImplementations": "<leader>i",
+let g:airline#extensions#ale#enabled = 0
+let g:ale_completion_autoimport = 1
+let g:ale_completion_enabled = 1
+let g:ale_completion_max_suggestions = 10
+let g:ale_history_enabled = 0
+let g:ale_keep_list_window_open = 1
+let g:ale_lsp_suggestions = 1
+let g:ale_set_signs = 0
+let g:ale_linters = {
+  \"go":              ["gopls"],
+  \"python":          ["pyls"],
+  \"c":               ["clangd"],
+  \"cpp":             ["clangd"],
+  \"javascript":      ["tsserver"],
+  \"javascriptreact": ["tsserver"],
+  \"typescript":      ["tsserver"],
+  \"typescriptreact": ["tsserver"],
+  \"php":             ["intelephense"],
 \}
