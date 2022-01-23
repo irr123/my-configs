@@ -20,6 +20,7 @@ nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
 nnoremap <Leader>t <C-o>
 nnoremap <S-Tab> :wincmd W<CR>
 nnoremap <Tab> :wincmd w<CR>
+tnoremap <Esc><Esc> <C-\><C-n>
 
 if has("clipboard")
   set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
@@ -61,11 +62,11 @@ let g:ale_set_signs = 0
 let g:ale_linters = {
   \"go":              ["gopls"],
   \"python":          ["pyls"],
+  \"php":             ["intelephense"],
   \"c":               ["clangd"],
   \"cpp":             ["clangd"],
   \"javascript":      ["tsserver"],
   \"javascriptreact": ["tsserver"],
   \"typescript":      ["tsserver"],
   \"typescriptreact": ["tsserver"],
-  \"php":             ["intelephense"],
 \}

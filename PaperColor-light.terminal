@@ -506,9 +506,11 @@
 	AAAAAAAAAAAAzQ==
 	</data>
 	<key>FontAntialias</key>
-	<true/>
+	<false/>
+	<key>FontHeightSpacing</key>
+	<real>1</real>
 	<key>FontWidthSpacing</key>
-	<integer>1</integer>
+	<real>1</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
 	<key>RestoreLines</key>
