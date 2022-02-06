@@ -11,11 +11,8 @@ let g:skip_defaults_vim     = 1
 nnoremap <Leader> <NOP>
 nnoremap <Leader><Left> :tabprevious<CR>
 nnoremap <Leader><Right> :tabnext<CR>
-nnoremap <Leader>[ :ALEFindReferences<CR>
-nnoremap <Leader>] :ALEGoToDefinition<CR>
 nnoremap <Leader>b :set nomore<Bar>:buffers<Bar>:set more<CR>:buffer<Space>
 nnoremap <Leader>e :Explore %:p:h<CR>
-nnoremap <Leader>k :ALEHover<CR>
 nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
 nnoremap <Leader>t <C-o>
 nnoremap <S-Tab> :wincmd W<CR>
@@ -51,22 +48,25 @@ set undolevels=8 viminfo=""
 silent! colorscheme pencil
 silent! set completeopt=menuone,noinsert,noselect
 
-let g:airline#extensions#ale#enabled = 0
-let g:ale_completion_autoimport = 1
-let g:ale_completion_enabled = 1
-let g:ale_completion_max_suggestions = 10
-let g:ale_history_enabled = 0
-let g:ale_keep_list_window_open = 1
-let g:ale_lsp_suggestions = 1
-let g:ale_set_signs = 0
-let g:ale_linters = {
-  \"go":              ["gopls"],
-  \"python":          ["pyls"],
-  \"php":             ["intelephense"],
-  \"c":               ["clangd"],
-  \"cpp":             ["clangd"],
-  \"javascript":      ["tsserver"],
-  \"javascriptreact": ["tsserver"],
-  \"typescript":      ["tsserver"],
-  \"typescriptreact": ["tsserver"],
-\}
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_fold_enabled = 0
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> <Leader>] <plug>(lsp-definition)
+    nmap <buffer> <Leader>[ <plug>(lsp-references)
+    nmap <buffer> <Leader>i <plug>(lsp-implementation)
+    nmap <buffer> <Leader>k <plug>(lsp-hover)
+
+    let g:lsp_format_sync_timeout = 1000
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
