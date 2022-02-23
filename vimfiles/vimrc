@@ -50,24 +50,34 @@ set undolevels=8 viminfo=""
 silent! colorscheme pencil
 silent! set completeopt=menuone,noinsert,noselect
 
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_signs_enabled = 0
-let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_document_code_action_signs_enabled = 0
-let g:lsp_document_highlight_enabled = 0
-let g:lsp_fold_enabled = 0
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> <Leader>] <plug>(lsp-definition)
-    nmap <buffer> <Leader>[ <plug>(lsp-references)
-    nmap <buffer> <Leader>i <plug>(lsp-implementation)
-    nmap <buffer> <Leader>k <plug>(lsp-hover)
-    let g:lsp_format_sync_timeout = 1000
-endfunction
-
-augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+let g:lsc_popup_syntax = v:false
+let g:lsc_reference_highlights = v:false
+let g:lsc_server_commands = {
+  \"go":              {"log_level": -1, "command": "gopls"},
+  \"python":          {"log_level": -1, "command": "pyls"},
+  \"c":               {"log_level": -1, "command": "clangd --background-index"},
+  \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
+  \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
+  \"javascriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
+  \"typescript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
+  \"typescriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
+  \"php": {
+  \  "log_level": -1,
+  \  "command": "intelephense --stdio",
+  \  "message_hooks": {
+  \    "initialize": {
+  \      "initializationOptions": {"storagePath": "/tmp/intelephense"},
+  \     },
+  \  },
+  \  "workspace_config": {
+  \    "intelephense.files.exclude": ["**/node_modules/**"]
+  \  },
+  \},
+\}
+let g:lsc_auto_map = {
+  \"defaults": v:true,
+  \"ShowHover": "<leader>k",
+  \"GoToDefinition": "<leader>]",
+  \"FindReferences": "<leader>[",
+  \"FindImplementations": "<leader>i",
+\}
