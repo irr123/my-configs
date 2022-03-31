@@ -29,7 +29,6 @@ vnoremap y "*y
 
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
-set guifont=Hack-Regular:h20
 set hidden
 set hlsearch incsearch ignorecase smartcase showmatch
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:{},фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]
