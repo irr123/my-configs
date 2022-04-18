@@ -18,14 +18,13 @@ nnoremap <Leader>t <C-o>
 nnoremap <S-Tab> :wincmd W<CR>
 nnoremap <Tab> :wincmd w<CR>
 tnoremap <Esc><Esc> <C-\><C-n>
-nnoremap P "*P
-nnoremap Y "*dd
-nnoremap p "*p
-nnoremap y "*y
-vnoremap P "*P
-vnoremap Y "*d
-vnoremap p "*p
-vnoremap y "*y
+
+if has("clipboard")
+  set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
+  if has("unnamedplus")                  " When possible use + register for copy-paste
+    set clipboard^=unnamedplus
+  endif
+endif
 
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
