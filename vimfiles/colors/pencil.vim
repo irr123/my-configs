@@ -1,6 +1,6 @@
 " Copypasted and modified https://github.com/reedes/vim-colors-pencil
 
-hi clear
+highlight clear
 
 if exists("syntax on")
     syntax reset
@@ -9,16 +9,16 @@ endif
 set background=light
 let g:colors_name="pencil"
 
-let s:black  = {"gui": "#4c4c4b", "cterm": "0" }
-let s:red    = {"gui": "#af005f", "cterm": "1" }
-let s:green  = {"gui": "#5f8700", "cterm": "2" }
-let s:yellow = {"gui": "#d75f00", "cterm": "3" }
-let s:blue   = {"gui": "#005faf", "cterm": "4" }
-let s:purple = {"gui": "#8700af", "cterm": "5" }
-let s:cyan   = {"gui": "#008b8b", "cterm": "6" }
-let s:white  = {"gui": "#eeeeee", "cterm": "7" }
-let s:gray   = {"gui": "#808080", "cterm": "8" }
-let s:pink   = {"gui": "#ff00ff", "cterm": "13"}
+let s:black  = {"gui": "#4c4c4b", "cterm": "0"  }
+let s:red    = {"gui": "#af005f", "cterm": "1"  }
+let s:green  = {"gui": "#5f8700", "cterm": "2"  }
+let s:yellow = {"gui": "#d75f00", "cterm": "3"  }
+let s:blue   = {"gui": "#005faf", "cterm": "4"  }
+let s:purple = {"gui": "#8700af", "cterm": "5"  }
+let s:cyan   = {"gui": "#008b8b", "cterm": "6"  }
+let s:white  = {"gui": "#eeeeee", "cterm": "7"  }
+let s:gray   = {"gui": "#808080", "cterm": "245"}
+let s:pink   = {"gui": "#ff00ff", "cterm": "13" }
 
 let s:sp_un  = "undercurl"
 
@@ -45,7 +45,7 @@ call s:h("LineNr",           {"fg": s:gray})
 call s:h("NonText",          {"fg": s:gray})
 call s:h("SignColumn",       {"fg": s:gray})
 call s:h("SpecialKey",       {"fg": s:gray})
-call s:h("MatchParen",       {"fg": s:pink})
+call s:h("MatchParen",       {"fg": s:yellow})
 call s:h("VertSplit",        {"fg": s:gray,  "bg": s:gray})
 call s:h("CursorLineNr",     {"fg": s:white, "bg": s:gray})
 call s:h("StatusLineNC",     {"fg": s:white, "bg": s:gray})
