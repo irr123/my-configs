@@ -17,7 +17,7 @@ Repo-related things:
   CFLAGS='-arch arm64 -target arm64-apple-macos11' \
   make app
   ```
-- Lsp installs manually
+- Lsp installs manually (`pip install "python-lsp-server[all]"`)
 - Manage (`git submodule deinit <path to plugin>` && `rm -rf <path to plugin>`) ||
   `git rm [--cached] <path to plugin>`
 - Manage `git submodule add https://github.com/<plugin name> vimfiles\pack\plugins\start\<plugin name>`

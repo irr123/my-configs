@@ -9,14 +9,17 @@ let g:netrw_use_errorwindow = 1          " https://github.com/vim/vim/issues/782
 let g:skip_defaults_vim     = 1
 
 nnoremap <Leader> <NOP>
-nnoremap <Leader><Left> :tabprevious<CR>
-nnoremap <Leader><Right> :tabnext<CR>
+
+inoremap <Leader>n <C-n>
+nnoremap <Leader>t <C-o>
+nnoremap <Leader>v <C-v>
+
 nnoremap <Leader>b :set nomore<Bar>:buffers<Bar>:set more<CR>:buffer<Space>
 nnoremap <Leader>e :Explore %:p:h<CR>
 nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
-nnoremap <Leader>t <C-o>
-nnoremap <S-Tab> :wincmd W<CR>
+
 nnoremap <Tab> :wincmd w<CR>
+nnoremap <S-Tab> :wincmd W<CR>
 tnoremap <Esc><Esc> <C-\><C-n>
 
 if has("clipboard")
@@ -53,7 +56,7 @@ let g:lsc_popup_syntax = v:false
 let g:lsc_reference_highlights = v:false
 let g:lsc_server_commands = {
   \"go":              {"log_level": -1, "command": "gopls"},
-  \"python":          {"log_level": -1, "command": "pyls"},
+  \"python":          {"log_level": -1, "command": "pylsp"},
   \"c":               {"log_level": -1, "command": "clangd --background-index"},
   \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
   \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
