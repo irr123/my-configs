@@ -8,19 +8,14 @@ let g:netrw_fastbrowse      = 0          " https://github.com/tpope/vim-vinegar/
 let g:netrw_use_errorwindow = 1          " https://github.com/vim/vim/issues/7828
 let g:skip_defaults_vim     = 1
 
-nnoremap <Leader> <NOP>
-
-inoremap <Leader>n <C-n>
 nnoremap <Leader>t <C-o>
 nnoremap <Leader>v <C-v>
-
 nnoremap <Leader>b :set nomore<Bar>:buffers<Bar>:set more<CR>:buffer<Space>
 nnoremap <Leader>e :Explore %:p:h<CR>
 nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
-
 nnoremap <Tab> :wincmd w<CR>
 nnoremap <S-Tab> :wincmd W<CR>
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 if has("clipboard")
   set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
@@ -30,8 +25,10 @@ if has("clipboard")
 endif
 
 set autoread | au CursorHold * checktime | call feedkeys("lh")
+set backspace=indent,eol,start           " https://unix.stackexchange.com/a/307974
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
+set guifont=JetBrainsMonoNL-Regular:h20
 set hidden
 set hlsearch incsearch ignorecase smartcase showmatch
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:{},фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]
