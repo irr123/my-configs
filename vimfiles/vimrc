@@ -28,10 +28,9 @@ set autoread | au CursorHold * checktime | call feedkeys("lh")
 set backspace=indent,eol,start           " https://unix.stackexchange.com/a/307974
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
-set guifont=JetBrainsMonoNL-Regular:h20
+set guifont=Hack-Regular:h20
 set hidden
 set hlsearch incsearch ignorecase smartcase showmatch
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:{},фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]
 set laststatus=2 noruler statusline=\%M\%f%=\%l:\%c
 set linebreak showbreak=¬
 set list listchars=tab:•·,trail:•,nbsp:¤,extends:¦,precedes:¦
@@ -54,6 +53,7 @@ let g:lsc_reference_highlights = v:false
 let g:lsc_server_commands = {
   \"go":              {"log_level": -1, "command": "gopls"},
   \"python":          {"log_level": -1, "command": "pylsp"},
+  \"java":            {"log_level": -1, "command": "jdtls -data " . getcwd()},
   \"c":               {"log_level": -1, "command": "clangd --background-index"},
   \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
   \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
