@@ -24,11 +24,17 @@ if has("clipboard")
   endif
 endif
 
+if &term =~ '^screen'
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
 set autoread | au CursorHold * checktime | call feedkeys("lh")
 set backspace=indent,eol,start           " https://unix.stackexchange.com/a/307974
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
-set guifont=Hack-Regular:h20
 set hidden
 set hlsearch incsearch ignorecase smartcase showmatch
 set laststatus=2 noruler statusline=\%M\%f%=\%l:\%c
@@ -41,9 +47,8 @@ set noeb vb t_vb=                        " https://vim.fandom.com/wiki/Disable_b
 set notitle nowrap nomodeline
 set nowildmenu wildmode=list:longest,full
 set shortmess=aI
-set splitright splitbelow
-set synmaxcol=300 spelllang=
-set ttimeout ttimeoutlen=50
+set synmaxcol=256 spelllang=
+set ttimeout ttimeoutlen=32
 set undolevels=8 viminfo=""
 silent! colorscheme pencil
 silent! set completeopt=menuone,noinsert,noselect
