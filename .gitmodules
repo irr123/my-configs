@@ -7,3 +7,6 @@
 [submodule "vimfiles/pack/plugins/start/lsc"]
 	path = vimfiles/pack/plugins/start/lsc
 	url = https://github.com/natebosch/vim-lsc.git
+[submodule "vimfiles/pack/plugins/start/fugitive"]
+	path = vimfiles/pack/plugins/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git

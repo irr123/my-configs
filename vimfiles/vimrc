@@ -15,7 +15,11 @@ nnoremap <Leader>e :Explore %:p:h<CR>
 nnoremap <Leader>q :bwipeout<Bar>:redraw<CR>
 nnoremap <Tab> :wincmd w<CR>
 nnoremap <S-Tab> :wincmd W<CR>
-tnoremap <Esc> <C-\><C-n>
+nnoremap H ^
+nnoremap J <C-f>
+nnoremap K <C-b>
+nnoremap L $
+tnoremap <Esc><Ecs> <C-\><C-n>
 
 if has("clipboard")
   set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
@@ -31,7 +35,6 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-set autoread | au CursorHold * checktime | call feedkeys("lh")
 set backspace=indent,eol,start           " https://unix.stackexchange.com/a/307974
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
@@ -59,6 +62,7 @@ let g:lsc_reference_highlights = v:false
 let g:lsc_server_commands = {
   \"go":              {"log_level": -1, "command": "gopls"},
   \"python":          {"log_level": -1, "command": "pylsp"},
+  \"rust":            {"log_level": -1, "command": "rust-analyzer"},
   \"java":            {"log_level": -1, "command": "jdtls -data " . getcwd()},
   \"c":               {"log_level": -1, "command": "clangd --background-index"},
   \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
