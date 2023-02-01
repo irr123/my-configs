@@ -1,27 +1,14 @@
 # Just a place where I synchronizing my cfgs ower multiple machines
 
 Good font you may be found here https://github.com/ryanoasis/nerd-fonts/releases
- or `brew install font-dejavu`
+ or `brew install font-jetbrains-mono`
 
-VIM setup working with 8+ version and neovim (https://github.com/macvim-dev/homebrew-macvim)
+VIM setup working with 8+ version and neovim
 
 Repo-related things:
 - Installation `git clone --depth 1 --recurse-submodules -j8 https://github.com/c1rno/my-configs.git`
   (or, for old git use `--recursive`)
-- Iterm2 alternatives: (`brew cask install kitty`||`brew cask install alacritty`)
-- How to build kitty from source for apple m1:
-  ```
-  LDFLAGS=-L/Users/<user>/Documents/homebrew/Cellar/gettext/0.21/lib \
-  CPPFLAGS=-I/Users/<user>/Documents/homebrew/Cellar/gettext/0.21/include \
-  CC="$(which clang)" \
-  CFLAGS='-arch arm64 -target arm64-apple-macos11' \
-  make app
-  ```
-- Lsp installs manually (`pip install "python-lsp-server[all]"`)
-- Manage (`git submodule deinit <path to plugin>` && `rm -rf <path to plugin>`) ||
-  `git rm [--cached] <path to plugin>`
-- Manage `git submodule add https://github.com/<plugin name> vimfiles\pack\plugins\start\<plugin name>`
-- Update: `git submodule foreach "(git checkout master; git pull)&"`
+- Update: `git pull; git submodule foreach "(git checkout master; git pull)&"`
 
 My unrelated notes:
 - do not forget `brew analytics off`
@@ -31,12 +18,20 @@ My unrelated notes:
   `ssh-keygen -o -a 100 -t ed25519 -C your_email@example.com` (prefer)
 - really usefull cmd `docker system prune -a --volumes`
 - [tricky docker endpoint](https://github.com/bufferings/docker-access-host/blob/master/docker-entrypoint.sh)
-- to start `vim` + `gopls` with custom build flags, just pass it over env:
-  `GOFLAGS="-tags=windows" vim <file-name>.go`
+- mac inplace: `find . -type f -name "*.go" -exec sed -i '' 's|"node-balancer/|"go-streaming/|g' {} \;`
+- to start `vim`&`gopls` with custom params use
+  ```
+  #!/usr/bin/env sh
+
+  export GOFLAGS="-tags=integration,unit,nowasm"
+  export CGO_CFLAGS="$(go env CGO_CFLAGS) -I/usr/local/include -I/Users/<...>/vendor/github.com/pebbe/zmq4"
+  export CGO_LDFLAGS="$(go env CGO_CFLAGS) -L/usr/local/lib"
+
+  /usr/local/bin/nvim "$@"
+  ```
 - `brew install ripgrep` and then put into chmoded $PATH/grep:
   ```
   #!/usr/bin/env sh
 
   rg --vimgrep --no-heading "$@"
   ```
-- mac inplace: `find . -type f -name "*.go" -exec sed -i '' 's|"node-balancer/|"go-streaming/|g' {} \;`
