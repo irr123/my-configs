@@ -15,10 +15,6 @@ nnoremap <Leader>t <C-o>
 nnoremap <Leader>v <C-v>
 nnoremap <S-Tab> :wincmd W<CR>
 nnoremap <Tab> :wincmd w<CR>
-nnoremap H ^
-nnoremap J <C-f>
-nnoremap K <C-b>
-nnoremap L $
 tnoremap <Esc><Esc> <C-\><C-n>
 
 if has("clipboard")
@@ -49,7 +45,6 @@ set nobackup noswapfile nowritebackup
 set noeb vb t_vb=                        " https://vim.fandom.com/wiki/Disable_beeping
 set notitle nowrap nomodeline
 set nowildmenu wildmode=list:longest,full
-set path=.\**                            " https://vim.fandom.com/wiki/Project_browsing_using_find
 set shortmess=aI
 set synmaxcol=256 spelllang=
 set ttimeout ttimeoutlen=32
