@@ -33,6 +33,7 @@
     "copyOnSelect": true,
     "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
     "disableAnimations": true,
+    "language": "en-US",
     "profiles": 
     {
         "defaults": 
@@ -297,7 +298,7 @@
             "brightGreen": "#5F8700",
             "brightPurple": "#8700AF",
             "brightRed": "#AF005F",
-            "brightWhite": "#EEEEEE",
+            "brightWhite": "#FFFFFF",
             "brightYellow": "#D75F00",
             "cursorColor": "#FF00FF",
             "cyan": "#008B8B",
@@ -306,13 +307,13 @@
             "name": "colorPaper",
             "purple": "#8700AF",
             "red": "#AF005F",
-            "selectionBackground": "#EEEEEE",
+            "selectionBackground": "#FFFFFF",
             "white": "#DDDDDD",
             "yellow": "#D75F00"
         }
     ],
     "showTerminalTitleInTitlebar": false,
     "tabWidthMode": "equal",
-    "theme": "dark",
+    "theme": "light",
     "themes": []
 }
