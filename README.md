@@ -11,6 +11,7 @@ Repo-related things:
 - Update: `git pull; git submodule foreach "(git checkout master; git pull)&"`
 
 My unrelated notes:
+- useful for win https://christitus.com/windows-tool/
 - do not forget `brew analytics off`
 - for docker do not forget enable `build_kit`
 - if you use screen on Mac, install it from brew, default not supported utf8
