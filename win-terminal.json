@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -20,7 +20,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -31,36 +31,37 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
     "disableAnimations": true,
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "antialiasingMode": "cleartype",
             "bellStyle": "taskbar",
             "colorScheme": "colorPaper",
             "cursorShape": "filledBox",
-            "font":
+            "font": 
             {
                 "face": "JetBrains Mono NL",
-                "size": 13
+                "size": 13.0
             },
             "intenseTextStyle": "none",
-            "padding": "2"
+            "padding": "2",
+            "useAtlasEngine": true
         },
-        "list":
+        "list": 
         [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Windows PowerShell"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
+                "hidden": false,
                 "name": "Command Prompt"
             },
             {
@@ -77,7 +78,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
@@ -287,29 +288,31 @@
             "yellow": "#808000"
         },
         {
-            "background": "#EEEEEC",
-            "black": "#4C4C4B",
+            "background": "#DDDDDD",
+            "black": "#444444",
             "blue": "#005FAF",
-            "brightBlack": "#808080",
+            "brightBlack": "#777777",
             "brightBlue": "#005FAF",
             "brightCyan": "#008B8B",
             "brightGreen": "#5F8700",
             "brightPurple": "#8700AF",
             "brightRed": "#AF005F",
-            "brightWhite": "#FFFFFF",
+            "brightWhite": "#EEEEEE",
             "brightYellow": "#D75F00",
             "cursorColor": "#FF00FF",
             "cyan": "#008B8B",
-            "foreground": "#4C4C4B",
+            "foreground": "#444444",
             "green": "#5F8700",
             "name": "colorPaper",
             "purple": "#8700AF",
             "red": "#AF005F",
-            "selectionBackground": "#808080",
-            "white": "#EEEEEC",
+            "selectionBackground": "#EEEEEE",
+            "white": "#DDDDDD",
             "yellow": "#D75F00"
         }
     ],
     "showTerminalTitleInTitlebar": false,
-    "tabWidthMode": "equal"
+    "tabWidthMode": "equal",
+    "theme": "dark",
+    "themes": []
 }
