@@ -10,10 +10,10 @@ set background=light
 let g:colors_name="pencil"
 
 let s:black  = {"gui": "#4d4d4b", "cterm": "0" }
-let s:red    = {"gui": "#b50000", "cterm": "1" }
+let s:red    = {"gui": "#af005f", "cterm": "1" }
 let s:green  = {"gui": "#5f8700", "cterm": "2" }
 let s:yellow = {"gui": "#d75f00", "cterm": "3" }
-let s:blue   = {"gui": "#007aff", "cterm": "4" }
+let s:blue   = {"gui": "#005faf", "cterm": "4" }
 let s:purple = {"gui": "#8700af", "cterm": "5" }
 let s:cyan   = {"gui": "#008b8b", "cterm": "6" }
 let s:white  = {"gui": "#dddddd", "cterm": "7" }

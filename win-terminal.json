@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -20,7 +20,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -34,15 +34,15 @@
     "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
     "disableAnimations": true,
     "language": "en-US",
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "antialiasingMode": "cleartype",
             "bellStyle": "taskbar",
             "colorScheme": "colorPaper",
             "cursorShape": "filledBox",
-            "font": 
+            "font":
             {
                 "face": "JetBrains Mono NL",
                 "size": 13.0
@@ -51,7 +51,7 @@
             "padding": "2",
             "useAtlasEngine": true
         },
-        "list": 
+        "list":
         [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -79,7 +79,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -291,13 +291,13 @@
         {
             "background": "#DDDDDD",
             "black": "#4D4D4B",
-            "blue": "#007AFF",
+            "blue": "#005FAF",
             "brightBlack": "#808080",
-            "brightBlue": "#007AFF",
+            "brightBlue": "#005FAF",
             "brightCyan": "#008B8B",
             "brightGreen": "#5F8700",
-            "brightPurple": "#8700AF",
-            "brightRed": "#B50000",
+            "brightPurple": "#FF00FF",
+            "brightRed": "#AF005F",
             "brightWhite": "#FFFFFF",
             "brightYellow": "#D75F00",
             "cursorColor": "#FF00FF",
@@ -306,7 +306,7 @@
             "green": "#5F8700",
             "name": "colorPaper",
             "purple": "#8700AF",
-            "red": "#B50000",
+            "red": "#AF005F",
             "selectionBackground": "#808080",
             "white": "#DDDDDD",
             "yellow": "#D75F00"
