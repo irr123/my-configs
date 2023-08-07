@@ -4,12 +4,12 @@
 [submodule "vimfiles/pack/plugins/start/editorconfig"]
 	path = vimfiles/pack/plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vimfiles/pack/plugins/start/lsc"]
-	path = vimfiles/pack/plugins/start/lsc
-	url = https://github.com/natebosch/vim-lsc.git
 [submodule "vimfiles/pack/plugins/start/fugitive"]
 	path = vimfiles/pack/plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vimfiles/pack/plugins/start/copilot"]
 	path = vimfiles/pack/plugins/start/copilot
 	url = https://github.com/github/copilot.vim.git
+[submodule "vimfiles/pack/plugins/start/ale"]
+	path = vimfiles/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git

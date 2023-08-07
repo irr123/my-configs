@@ -7,6 +7,16 @@ let g:netrw_banner          = 0
 let g:netrw_fastbrowse      = 0          " https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
 let g:netrw_use_errorwindow = 1          " https://github.com/vim/vim/issues/7828
 let g:skip_defaults_vim     = 1
+let g:airline#extensions#ale#enabled = 0
+let g:ale_completion_autoimport      = 1
+let g:ale_completion_enabled         = 1
+let g:ale_history_enabled            = 0
+let g:ale_keep_list_window_open      = 1
+let g:ale_lsp_suggestions            = 1
+let g:ale_set_signs                  = 0
+let g:ale_linters = {
+  \"python": ["pylsp", "pylint"],
+\}
 
 nnoremap <Leader>b :set nomore<Bar>:buffers<Bar>:set more<CR>:buffer<Space>
 nnoremap <Leader>e :Explore %:p:h<CR>
@@ -16,6 +26,11 @@ nnoremap <Leader>v <C-v>
 nnoremap <S-Tab> :wincmd W<CR>
 nnoremap <Tab> :wincmd w<CR>
 tnoremap <Esc><Esc> <C-\><C-n>
+
+nnoremap <Leader>] :ALEGoToDefinition<CR>
+nnoremap <Leader>[ :ALEFindReferences<CR>
+nnoremap <Leader>i :ALEGoToImplementation<CR>
+nnoremap <Leader>k :ALEHover<CR>
 
 if has("clipboard")
   set clipboard^=unnamed                 " On mac and Windows, use * register for copy-paste
@@ -51,37 +66,3 @@ set ttimeout ttimeoutlen=32
 set undolevels=8 viminfo=""
 silent! colorscheme pencil
 silent! set completeopt=menuone,noinsert,noselect
-
-let g:lsc_popup_syntax = v:false
-let g:lsc_reference_highlights = v:false
-let g:lsc_server_commands = {
-  \"go":              {"log_level": -1, "command": "gopls"},
-  \"python":          {"log_level": -1, "command": "pylsp"},
-  \"rust":            {"log_level": -1, "command": "rust-analyzer"},
-  \"java":            {"log_level": -1, "command": "jdtls -data " . getcwd()},
-  \"c":               {"log_level": -1, "command": "clangd --background-index"},
-  \"cpp":             {"log_level": -1, "command": "clangd --background-index"},
-  \"javascript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"javascriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"typescript":      {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"typescriptreact": {"log_level": -1, "command": "typescript-language-server --stdio"},
-  \"php": {
-  \  "log_level": -1,
-  \  "command": "intelephense --stdio",
-  \  "message_hooks": {
-  \    "initialize": {
-  \      "initializationOptions": {"storagePath": "/tmp/intelephense"},
-  \     },
-  \  },
-  \  "workspace_config": {
-  \    "intelephense.files.exclude": ["**/node_modules/**"]
-  \  },
-  \},
-\}
-let g:lsc_auto_map = {
-  \"defaults": v:true,
-  \"ShowHover": "<leader>k",
-  \"GoToDefinition": "<leader>]",
-  \"FindReferences": "<leader>[",
-  \"FindImplementations": "<leader>i",
-\}
