@@ -50,7 +50,7 @@
             "cursorShape": "filledBox",
             "font":
             {
-                "face": "DejaVu Sans Mono",
+                "face": "JetBrains Mono NL",
                 "size": 14.0
             },
             "intenseTextStyle": "none",
