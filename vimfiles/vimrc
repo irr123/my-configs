@@ -45,7 +45,7 @@ set nobackup noswapfile nowritebackup
 set noeb vb t_vb=                        " https://vim.fandom.com/wiki/Disable_beeping
 set notitle nowrap nomodeline
 set nowildmenu wildmode=list:longest,full
-set shortmess=aI
+set shortmess=I
 set synmaxcol=256 spelllang=
 set ttimeout ttimeoutlen=32
 set undolevels=8 viminfo=""
