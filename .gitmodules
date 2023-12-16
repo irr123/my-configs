@@ -4,6 +4,9 @@
 [submodule "vimfiles/pack/plugins/start/editorconfig"]
 	path = vimfiles/pack/plugins/start/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vimfiles/pack/plugins/start/fugitive"]
+	path = vimfiles/pack/plugins/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vimfiles/pack/plugins/start/lsp"]
 	path = vimfiles/pack/plugins/start/lsp
 	url = https://github.com/prabirshrestha/vim-lsp.git
