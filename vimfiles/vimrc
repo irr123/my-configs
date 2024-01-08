@@ -58,6 +58,7 @@ let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_fold_enabled = 0
+let g:lsp_signature_help_enabled = 0
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
