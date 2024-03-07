@@ -21,7 +21,7 @@ alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
 
-alias adminer='f() { docker run --name adminer --rm -it -p 8081:8080 -e ADMINER_DESIGN="pokorny" adminer:4.8.1-standalone };f'
+alias adminer='f() { docker run --name adminer --net host --rm -it -e ADMINER_DESIGN="pokorny" adminer:4.8.1-standalone };f'
 alias mysql='f() { docker run --name mysql --rm -it mysql:8.0.31 ${@:-bash} };f'
 
 [[ -e ~/.private_cfg ]] && . ~/.private_cfg
