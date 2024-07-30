@@ -10,6 +10,7 @@ unsetopt share_history
 autoload -Uz compinit && compinit -i
 autoload -U +X bashcompinit && bashcompinit
 
+export BUILDKIT_PROGRESS=plain
 export EDITOR=vim
 export GOPATH=$HOME/Documents/workspace/go
 export HISTCONTROL=ignoredups:ignorespace

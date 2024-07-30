@@ -2,6 +2,7 @@ PS1=": ${debian_chroot:+($debian_chroot)}\w;\[$(tput sgr0)\] "
 
 shopt -s no_empty_cmd_completion
 
+export BUILDKIT_PROGRESS=plain
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export EDITOR=vim
 export GOPATH=$HOME/workspace/go-path
@@ -21,7 +22,8 @@ alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
 
-alias adminer='f() { docker run --name adminer --net host --rm -it -e ADMINER_DESIGN="pokorny" adminer:4.8.1-standalone };f'
-alias mysql='f() { docker run --name mysql --rm -it mysql:8.0.31 ${@:-bash} };f'
+alias adminer="docker run --name adminer --rm -it -p 8080:8080 -e ADMINER_DESIGN=pokorny adminer:4.8.1-standalone"
+alias mysql="docker run --name mysql --rm -it mysql:lts bash"
+alias jupiter="docker run --name jupyter --rm -it -p 8081:8888 -v $PWD:/home/jovyan jupyter/datascience-notebook:ubuntu-22.04 jupyter-lab --NotebookApp.token='' --NotebookApp.password=''"
 
 [[ -e ~/.private_cfg ]] && . ~/.private_cfg

@@ -34,5 +34,5 @@ My unrelated notes:
   ```
   #!/usr/bin/env sh
 
-  rg --no-heading --ignore-case --hidden "$@"
+  rg --no-heading --vimgrep --hidden $@
   ```
