@@ -28,7 +28,7 @@ alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
 
-alias adminer='f() { docker run --name adminer --net host --rm -it -e ADMINER_DESIGN="pokorny" adminer:4.8.1-standalone };f'
+alias adminer='f() { docker run --name adminer -p 8080:8080 --rm -it -e ADMINER_DESIGN="pokorny" adminer:4.8.1-standalone };f'
 alias mysql='f() { docker run --name mysql --rm -it mysql:8.0.31 ${@:-bash} };f'
 
 bindkey -e

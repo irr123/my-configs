@@ -34,7 +34,7 @@ endif
 set backspace=indent,eol,start           " https://unix.stackexchange.com/a/307974
 set encoding=utf-8 fileformats=unix fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldlevel=99 foldmethod=indent       " za to toggle, opens all by default
-set hidden
+set hidden notermguicolors
 set hlsearch incsearch ignorecase smartcase showmatch
 set laststatus=2 noruler statusline=\%M\%f%=\%l:\%c
 set linebreak showbreak=¬

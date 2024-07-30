@@ -18,7 +18,7 @@ My unrelated notes:
 - from [another-doc](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54):
   `ssh-keygen -o -a 100 -t ed25519 -C your_email@example.com` (prefer)
 - really usefull cmd `docker system prune -a --volumes`
-- [tricky docker endpoint](https://github.com/bufferings/docker-access-host/blob/master/docker-entrypoint.sh)
+- [host.docker.internal](https://github.com/bufferings/docker-access-host/blob/master/docker-entrypoint.sh)
 - mac inplace: `find . -type f -name "*.go" -exec sed -i '' 's|"node-balancer/|"go-streaming/|g' {} \;`
 - to start `vim`&`gopls` with custom params use
   ```
