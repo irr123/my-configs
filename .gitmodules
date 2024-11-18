@@ -13,7 +13,3 @@
 [submodule "vimfiles/pack/plugins/start/lsp-settings"]
 	path = vimfiles/pack/plugins/start/lsp-settings
 	url = https://github.com/mattn/vim-lsp-settings.git
-[submodule "vimfiles/pack/plugins/start/copilot"]
-	path = vimfiles/pack/plugins/start/copilot
-	url = https://github.com/github/copilot.vim.git
-

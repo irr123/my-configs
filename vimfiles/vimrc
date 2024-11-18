@@ -24,7 +24,7 @@ if has("clipboard")
   endif
 endif
 
-if &term =~ '^screen'
+if &term =~ "^screen"
   execute "set <xUp>=\e[1;*A"
   execute "set <xDown>=\e[1;*B"
   execute "set <xRight>=\e[1;*C"
@@ -59,17 +59,18 @@ let g:lsp_document_code_action_signs_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_fold_enabled = 0
 let g:lsp_signature_help_enabled = 0
+let g:lsp_settings_filetype_python = ["ruff", "pylsp"]
 
 function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> <Leader>] <plug>(lsp-definition)
-    nmap <buffer> <Leader>[ <plug>(lsp-references)
-    nmap <buffer> <Leader>i <plug>(lsp-implementation)
-    nmap <buffer> <Leader>k <plug>(lsp-hover)
+  setlocal omnifunc=lsp#complete
+  if exists("+tagfunc") | setlocal tagfunc=lsp#tagfunc | endif
+  nmap <buffer> <Leader>] <plug>(lsp-definition)
+  nmap <buffer> <Leader>[ <plug>(lsp-references)
+  nmap <buffer> <Leader>i <plug>(lsp-implementation)
+  nmap <buffer> <Leader>k <plug>(lsp-hover)
 endfunction
 
 augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
