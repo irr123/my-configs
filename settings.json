@@ -35,7 +35,6 @@
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.tabs.enableAnimation": false,
     "update.mode": "none",
-    "window.autoDetectHighContrast": false,
     "window.density.editorTabHeight": "compact",
     "window.title": "${dirty}${activeEditorLong}",
     "workbench.colorTheme": "Solarized Light",
@@ -47,5 +46,10 @@
     "workbench.iconTheme": null,
     "workbench.reduceMotion": "on",
     "workbench.startupEditor": "none",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "update.showReleaseNotes": false,
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "telemetry.feedback.enabled": false,
+    "geminicodeassist.enableTelemetry": false,
+    "editor.stickyScroll.enabled": false
 }
