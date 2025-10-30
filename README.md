@@ -36,3 +36,5 @@ My unrelated notes:
 
   rg --no-heading --vimgrep --hidden $@
   ```
+- `sudo npm update -g @google/gemini-cli` -> `~/.gemini/settings.json`
+- `sudo npm update -g anthropic-ai/claude-code`

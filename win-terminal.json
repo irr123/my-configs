@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":    [
+    "actions":
+    [
         {
-            "command":            {
+            "command":
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -18,7 +20,8 @@
             "id": "User.find"
         },
         {
-            "command":            {
+            "command":
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -26,13 +29,19 @@
             "id": "User.splitPane.A6751878"
         },
         {
-            "command":            {
+            "command":
+            {
                 "action": "nextTab"
             },
             "id": "User.nextTab.0"
         },
         {
-            "command":            {
+            "command": "duplicateTab",
+            "id": "User.duplicateTab"
+        },
+        {
+            "command":
+            {
                 "action": "prevTab"
             },
             "id": "User.prevTab.0"
@@ -43,7 +52,8 @@
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disableAnimations": true,
     "initialPosition": "0,0",
-    "keybindings":    [
+    "keybindings":
+    [
         {
             "id": null,
             "keys": "enter"
@@ -99,6 +109,10 @@
         {
             "id": null,
             "keys": "ctrl+numpad_plus"
+        },
+        {
+            "id": "User.duplicateTab",
+            "keys": "ctrl+shift+t"
         },
         {
             "id": null,
@@ -218,6 +232,10 @@
         },
         {
             "id": null,
+            "keys": "ctrl+shift+period"
+        },
+        {
+            "id": null,
             "keys": "ctrl+numpad0"
         },
         {
@@ -323,26 +341,33 @@
     ],
     "language": "en-US",
     "launchMode": "default",
-    "newTabMenu":    [
+    "newTabMenu":
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":    {
-        "defaults":        {
+    "profiles":
+    {
+        "defaults":
+        {
             "antialiasingMode": "cleartype",
             "bellStyle": "taskbar",
             "closeOnExit": "graceful",
             "colorScheme": "colorPaper",
             "cursorShape": "filledBox",
-            "font":            {
+            "font":
+            {
                 "face": "JetBrains Mono NL",
                 "size": 14
             },
+            "icon": "none",
             "intenseTextStyle": "none",
-            "padding": "2"
+            "padding": "2",
+            "suppressApplicationTitle": true
         },
-        "list":        [
+        "list":
+        [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -370,12 +395,14 @@
             {
                 "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
                 "hidden": false,
+                "icon": null,
                 "name": "Ubuntu 24.04.1 LTS",
                 "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
             }
         ]
     },
-    "schemes":    [
+    "schemes":
+    [
         {
             "background": "#DDDDDD",
             "black": "#4D4D4B",
