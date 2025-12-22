@@ -13,14 +13,15 @@ export BUILDKIT_PROGRESS=plain
 export COMPOSE_BAKE=true
 export EDITOR=vim
 export GOPATH="$HOME/workspace/go-path"
-export PATH="$GOPATH/bin:$PATH"
-export SCREENDIR="$HOME/.screen"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=500
 export HISTSIZE=500
 export LANG=en_US.UTF-8
 export LC_ALL="$LANG"
+export NEXT_TELEMETRY_DISABLED=1
 export PAGER="less -S" # Basic pager with line chopping
+export PATH="$GOPATH/bin:$PATH"
+export SCREENDIR="$HOME/.screen"
 
 alias cp='cp -v'
 alias ll='ls -FGlAhp'
@@ -28,6 +29,7 @@ alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias less='less -FSRXc'
+alias docker=podman
 
 alias adminer="docker run --name adminer --rm -it -p 8080:8080 -e ADMINER_DESIGN=pokorny adminer:standalone"
 alias mysql="docker run --name mysql --rm -it mysql:lts bash"
