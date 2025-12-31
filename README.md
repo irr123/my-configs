@@ -12,6 +12,7 @@ Repo-related things:
 
 My unrelated notes:
 - useful for win https://christitus.com/windows-tool/
+  - same for mac https://github.com/tw93/Mole
 - do not forget `brew analytics off`
 - for docker do not forget enable `build_kit`
 - if you use screen on Mac, install it from brew, default not supported utf8

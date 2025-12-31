@@ -10,7 +10,6 @@ stty -ixon
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export BUILDKIT_PROGRESS=plain
-export COMPOSE_BAKE=true
 export EDITOR=vim
 export GOPATH="$HOME/workspace/go-path"
 export HISTCONTROL=ignoredups:ignorespace
@@ -18,7 +17,7 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 export LANG=en_US.UTF-8
 export LC_ALL="$LANG"
-export NEXT_TELEMETRY_DISABLED=1
+export LESSSECURE=1
 export PAGER="less -S" # Basic pager with line chopping
 export PATH="$GOPATH/bin:$PATH"
 export SCREENDIR="$HOME/.screen"
