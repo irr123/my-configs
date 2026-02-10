@@ -33,6 +33,7 @@ alias rm='rm -v'
 
 alias adminer='f() { docker run --name adminer -p 8080:8080 --rm -it -e ADMINER_DESIGN="pokorny" adminer:standalone };f'
 alias mysql='f() { docker run --name mysql --rm -it mysql:8.0.31 ${@:-bash} };f'
+alias redis='f() { docker run --name redis --rm -it valkey/valkey:latest ${@:-bash} };f'
 
 bindkey -e
 
