@@ -1,4 +1,4 @@
-# Just a place where I synchronizing my cfgs ower multiple machines
+# Just a place where I synchronizing my cfgs over multiple machines
 
 Good font you may be found here https://github.com/ryanoasis/nerd-fonts/releases
  or `brew install font-hack`
@@ -15,40 +15,18 @@ Unrelated shortcats:
 - useful for win https://christitus.com/windows-tool/
   - same for mac https://github.com/tw93/Mole
 - do not forget `brew analytics off`
-- for docker do not forget enable `build_kit`
-- if you use screen on Mac, install it from brew, default not supported utf8
-- `docker system prune -a --volumes`
-- [host.docker.internal](https://github.com/bufferings/docker-access-host/blob/master/docker-entrypoint.sh)
-- `xcode-select --install`
+- `sudo softwareupdate --install --all --restart` && `xcode-select --install`
 - to start `vim`&`gopls` with custom params use
   ```
   #!/bin/sh
-
   export GOFLAGS="-tags=integration,unit,nowasm"
   export CGO_CFLAGS="$(go env CGO_CFLAGS) -I/usr/local/include -I/Users/<...>/vendor/github.com/pebbe/zmq4"
   export CGO_LDFLAGS="$(go env CGO_CFLAGS) -L/usr/local/lib"
-
   exec nvim "$@"
   ```
 - `brew install ripgrep` and then put into chmoded $PATH/grep:
   ```
   #!/bin/sh
-
-  rg --no-heading --vimgrep --hidden "$@"
+  rg --no-heading -uu -- "$@"
   ```
-- `sudo npm update -g @google/gemini-cli` -> `~/.gemini/settings.json`
-- `sudo npm update -g anthropic-ai/claude-code`
-- `brew install codex`, `~/.codex/config.toml`:
-  ```toml
-  personality = "none" # or "friendly" or "pragmatic"
-  model = "gpt-5.4"
-
-  [analytics]
-  enabled = false
-
-  [feedback]
-  enabled = false
-
-  [tui]
-  animations = false
-  ```
+- [opencode.ai](https://opencode.ai/docs/config/) instead of codex, claude, etc

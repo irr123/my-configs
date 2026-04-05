@@ -28,7 +28,6 @@ alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias less='less -FSRXc'
-alias docker=podman
 
 alias adminer="docker run --name adminer --rm -it -p 8080:8080 -e ADMINER_DESIGN=pokorny adminer:standalone"
 alias mysql="docker run --name mysql --rm -it mysql:lts bash"
