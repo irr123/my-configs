@@ -21,7 +21,7 @@ export LANG=en_US.UTF-8
 export LC_ALL="$LANG"
 export LESSSECURE=1
 export PAGER="less -S"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$PATH"
 export SCREENDIR=$HOME/.screen
 
 alias cp='cp -v'
