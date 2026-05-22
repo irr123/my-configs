@@ -2,14 +2,15 @@ root = true
 
 [*]
 charset = utf-8
-end_of_line = LF
-indent_size = 4
+end_of_line = lf
 indent_style = space
+indent_size = 4
 
-[{Makefile,*.go}]
+[{Makefile,*.go,*.gd}]
 indent_style = tab
+tab_width = 4
 
-[*.{yml,yaml,json}]
+[*.{yml,yaml,json,ts,js,mjs,tsx,jsx,cjs}]
 indent_size = 2
 
 [*.md]
