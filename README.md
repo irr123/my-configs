@@ -15,7 +15,7 @@ Unrelated shortcats:
 - useful for win https://christitus.com/windows-tool/
   - same for mac https://github.com/tw93/Mole
 - do not forget `brew analytics off`
-- `sudo softwareupdate --install --all --restart` && `xcode-select --install`
+- `sudo softwareupdate --install --all --restart` || `xcode-select --install`
 - to start `vim`&`gopls` with custom params use
   ```
   #!/bin/sh

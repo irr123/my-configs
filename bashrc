@@ -11,7 +11,7 @@ stty -ixon
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export BUILDKIT_PROGRESS=plain
 export EDITOR=vim
-export GOPATH="$HOME/workspace/go-path"
+export GOPATH="$HOME/workspace/go"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=500
 export HISTSIZE=500
