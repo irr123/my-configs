@@ -1,7 +1,7 @@
 # Just a place where I synchronizing my cfgs over multiple machines
 
 Good font you may be found here https://github.com/ryanoasis/nerd-fonts/releases
- or `brew install font-dejavu-sans-mono-nerd-font`
+ or `brew install font-dejavu`
 
 VIM setup working with 8+ version and neovim
 

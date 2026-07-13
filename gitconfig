@@ -10,7 +10,6 @@
 [core]
 	autocrlf = false
 	editor = vim --noplugin
-	excludesfile = ~/.gitignore
 	fileMode = false
 	ignorecase = false
 	longpaths = true
