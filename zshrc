@@ -29,11 +29,21 @@ alias less='less -FSRXc'
 alias ll='ls -FGlAhp'
 alias mkdir='mkdir -v'
 alias mv='mv -v'
-alias rm='rm -v'
 
 alias adminer='f() { docker run --name adminer -p 8080:8080 --rm -it -e ADMINER_DESIGN="pokorny" adminer:standalone };f'
 alias mysql='f() { docker run --name mysql --rm -it mysql:lts ${@:-bash} };f'
 alias redis='f() { docker run --name redis --rm -it valkey/valkey:latest ${@:-bash} };f'
+
+rm() {
+  local files=() endopts=0 a
+  for a in "$@"; do
+    if (( endopts )); then files+=("./${a#./}")
+    elif [[ $a == -- ]]; then endopts=1
+    elif [[ $a != -* ]]; then files+=("$a")
+    fi
+  done
+  (( $#files )) && /usr/bin/trash -v "${files[@]}"
+}
 
 bindkey -e
 
