@@ -20,11 +20,10 @@ start=$(date +%s)
 
 step "brew upgrade"
 run brew upgrade -y
-run brew cleanup
-run brew autoremove
 
-step "pi update --all"
-run pi update --all
+step "pi update"
+# run pi update --models
+run pi update --extensions
 
 step "my-configs pull + submodules"
 (cd ~/workspace/my-configs && run git pull --ff-only && git submodule foreach 'git checkout master 2>/dev/null || git checkout main; git pull --ff-only')
@@ -57,7 +56,16 @@ if [ -d "$LSP_SRV" ]; then
 fi
 
 if [ "$CLEAN" -eq 1 ]; then
+  step "brew cleanup"
+  run brew cleanup
+  run brew autoremove
+
   command -v mo >/dev/null && { step "mo maintenance"; run mo clean; run mo optimize; }
+
+  step "clean ~/.claude"
+  for p in backups jobs projects sessions history.jsonl stats-cache.json; do
+    run rm -rf "$HOME/.claude/$p"
+  done
 fi
 
 if [ "$FULL" -eq 1 ]; then
