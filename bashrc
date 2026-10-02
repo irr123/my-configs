@@ -18,20 +18,19 @@ export HISTSIZE=500
 export LANG=en_US.UTF-8
 export LC_ALL="$LANG"
 export LESSSECURE=1
-export PAGER="less -S" # Basic pager with line chopping
+export PAGER="less -S"
 export PATH="$GOPATH/bin:$PATH"
 export SCREENDIR="$HOME/.screen"
 
 alias cp='cp -v'
+alias less='less -FSRXc'
 alias ll='ls -FGlAhp'
 alias mkdir='mkdir -v'
 alias mv='mv -v'
 alias rm='rm -v'
-alias less='less -FSRXc'
 
 alias adminer="docker run --name adminer --rm -it -p 8080:8080 -e ADMINER_DESIGN=pokorny adminer:standalone"
 alias mysql="docker run --name mysql --rm -it mysql:lts bash"
 alias jupiter="docker run --name jupyter --rm -it --user root -p 8888:8888 -v \"\$PWD\":/home/jovyan/work jupyter/datascience-notebook:ubuntu-22.04 jupyter-lab --NotebookApp.token='' --NotebookApp.password='' --allow-root"
 
 if [[ -e ~/.private_cfg ]]; then . ~/.private_cfg; fi
-if [[ -e ~/.local/bin/env ]]; then . ~/.local/bin/env; fi

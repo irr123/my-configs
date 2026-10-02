@@ -1,0 +1,42 @@
+{
+  "defaultModel": "claude-sonnet-5",
+  "defaultThinkingLevel": "minimal",
+  "enableInstallTelemetry": false,
+  "hideThinkingBlock": false,
+  "lastChangelogVersion": "1.0.0",
+  "theme": "system",
+  "tuiMode": "regular",
+  "extensions": [
+    "-builtin:codemode",
+    "-builtin:llama.cpp"
+  ],
+  "enabledModels": [
+    "pi-claude-code-provider/sonnet",
+    "openai-codex/gpt-6-luna"
+  ],
+  "skills": [
+    "~/workspace/lean/skills"
+  ],
+  "packages": [
+    "npm:pi-web-access",
+    {
+      "source": "npm:pi-subagents",
+      "skills": [
+        "-skills/council-mode/SKILL.md",
+        "-skills/pi-subagents/SKILL.md"
+      ],
+      "prompts": [
+        "-prompts/council.md",
+        "-prompts/gather-context-and-clarify.md",
+        "-prompts/parallel-cleanup.md",
+        "-prompts/parallel-research.md",
+        "-prompts/parallel-review.md",
+        "-prompts/review-loop.md"
+      ]
+    },
+    "npm:pi-claude-code-provider"
+  ],
+  "subagents": {
+    "disableThinking": true
+  }
+}
