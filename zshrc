@@ -34,7 +34,7 @@ alias adminer='f() { docker run --name adminer -p 8080:8080 --rm -it -e ADMINER_
 alias mysql='f() { docker run --name mysql --rm -it mysql:lts ${@:-bash} };f'
 alias redis='f() { docker run --name redis --rm -it valkey/valkey:latest ${@:-bash} };f'
 
-watch() { while true; do clear; "$@"; sleep 2; done; }
+watch() { d=$(date); while true; do clear; echo $d; date; echo; "$@"; sleep 3; done; }
 rm() {
   local files=() endopts=0 a
   for a in "$@"; do

@@ -1,9 +1,10 @@
 {
-  "defaultModel": "claude-sonnet-5",
   "defaultThinkingLevel": "minimal",
   "enableInstallTelemetry": false,
   "hideThinkingBlock": false,
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.1.0",
+  "showCacheMissNotices": true,
+  "showHardwareCursor": true,
   "theme": "system",
   "tuiMode": "regular",
   "extensions": [
@@ -11,7 +12,6 @@
     "-builtin:llama.cpp"
   ],
   "enabledModels": [
-    "pi-claude-code-provider/sonnet",
     "openai-codex/gpt-6-luna"
   ],
   "skills": [
@@ -34,7 +34,7 @@
         "-prompts/review-loop.md"
       ]
     },
-    "npm:pi-claude-code-provider"
+    "npm:pi-claude-bridge"
   ],
   "subagents": {
     "disableThinking": true

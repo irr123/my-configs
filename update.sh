@@ -72,9 +72,11 @@ if [ "$FULL" -eq 1 ]; then
   step "brew doctor"
   run brew doctor   # doctor exits non-zero on mere warnings
 
+  command -v mo     >/dev/null && { step "mo purge"; run mo purge; }
   command -v mas    >/dev/null && { step "mas upgrade";   run mas upgrade; }
   command -v rustup >/dev/null && { step "rustup update"; run rustup update; }
   command -v npm    >/dev/null && { step "npm -g update"; run npm update -g; }
+  # command -v docker >/dev/null && { step "docker prune"; run docker system prune -a --volumes; }
 
   step "softwareupdate -i -a (macOS)"
   run sudo softwareupdate -i -a
