@@ -1,8 +1,7 @@
 {
-  "defaultThinkingLevel": "minimal",
+  "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
-  "hideThinkingBlock": false,
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.4.0",
   "showCacheMissNotices": true,
   "showHardwareCursor": true,
   "theme": "system",
@@ -12,13 +11,15 @@
     "-builtin:llama.cpp"
   ],
   "enabledModels": [
-    "openai-codex/gpt-6-luna"
+    "openai-codex/gpt-6-luna",
+    "radius/recursive/flint",
+    "antigravity/gemini-3.8-flash"
   ],
   "skills": [
-    "~/workspace/lean/skills"
+    "~/workspace/lean/skills",
+    "~/workspace/security-audit-skill/skills"
   ],
   "packages": [
-    "npm:pi-web-access",
     {
       "source": "npm:pi-subagents",
       "skills": [
@@ -34,9 +35,52 @@
         "-prompts/review-loop.md"
       ]
     },
-    "npm:pi-claude-bridge"
+    {
+      "source": "npm:pi-antigravity"
+    }
   ],
   "subagents": {
-    "disableThinking": true
+    "disableThinking": true,
+    "agentOverrides": {
+      "evidence-auditor": {
+        "tools": "inherit"
+      },
+      "researcher": {
+        "tools": "inherit"
+      },
+      "reviewer": {
+        "tools": "inherit"
+      },
+      "scout": {
+        "tools": "inherit"
+      },
+      "worker": {
+        "tools": "inherit"
+      },
+      "oracle": {
+        "tools": "inherit"
+      },
+      "delegate": {
+        "tools": "inherit"
+      },
+      "claude-code": {
+        "tools": "inherit"
+      },
+      "claude-code-writer": {
+        "tools": "inherit"
+      },
+      "codex-exec": {
+        "tools": "inherit"
+      },
+      "codex-exec-writer": {
+        "tools": "inherit"
+      },
+      "cursor-agent": {
+        "tools": "inherit"
+      },
+      "cursor-agent-writer": {
+        "tools": "inherit"
+      }
+    }
   }
 }

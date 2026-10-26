@@ -28,6 +28,9 @@ run pi update --extensions
 step "my-configs pull + submodules"
 (cd ~/workspace/my-configs && run git pull --ff-only && git submodule foreach 'git checkout master 2>/dev/null || git checkout main; git pull --ff-only')
 
+step "security-audit-skill pull"
+(cd ~/workspace/security-audit-skill && run git pull --ff-only)
+
 step "vim-lsp-settings servers"
 LSP_SRV=~/.local/share/vim-lsp-settings/servers
 LSP_INST=~/.vim/pack/plugins/start/lsp-settings/installer
