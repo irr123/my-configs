@@ -11,8 +11,8 @@
     "-builtin:llama.cpp"
   ],
   "enabledModels": [
-    "openai-codex/gpt-6-luna",
     "radius/recursive/flint",
+    "openai-codex/gpt-6.1-terra",
     "antigravity/gemini-3.8-flash"
   ],
   "skills": [
